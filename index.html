@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="favicon.ico">
+  <title>Mis Rutinas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap">
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+<main>
+  <h1>Mis rutinas</h1>
+  <p class="sub">Gym y otros deportes. Se guardan en este navegador.</p>
+  <div class="bar">
+    <div class="chips" id="chips"></div>
+    <button class="btn" id="imp">Pegar tabla</button>
+    <button class="btn p" id="new">Nueva rutina</button>
+  </div>
+  <div id="list"></div>
+  <div id="st" role="status" style="position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;display:none"></div>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" id="f">
+    <p class="hint">Pega una tabla en formato Markdown (con barras |). Las columnas se leen como: ejercicio, series x reps, descanso, notas.</p>
+    <div class="meta">
+      <input class="tt" id="itt" placeholder="Título de la rutina">
+      <select id="isp"></select>
+    </div>
+    <textarea id="ita" placeholder="| Ejercicio | Series x reps | Descanso | Notas |&#10;|---|---|---|---|&#10;| Sentadilla | 4 x 5-8 | 2-3 min | |"></textarea>
+    <div class="acts">
+      <button class="btn p" id="ok" type="button">Añadir rutina</button>
+      <button class="btn" value="cancel">Cancelar</button>
+    </div>
+  </form>
+</dialog>
+<script src="action.js"></script>
+</body>
+</html>
